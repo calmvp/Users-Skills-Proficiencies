@@ -10,7 +10,9 @@ class Skill < ActiveRecord::Base
   def proficiency=(year_experience, formal, user_id)
     self.formal.clear
     self.year_experience.clear
-    self.proficiencies << Proficiency.create(user_id: user_id, year_experience: year_experience, formal: formal)
+    self.proficiencies << Proficiency.create(user_id: user_id, 
+                                            year_experience: year_experience, 
+                                            formal_training: formal)
   end
 
   private

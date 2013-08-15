@@ -3,6 +3,13 @@
 
   <%# TODO: display the skills and proficiency levels for each user ... %>
   <% @users.each do |user| %>
-    <%=user.name %>, <%= user.skills.name %>, <%= user.proficiencies %><br>
+    <%=user.name %>, <% user.skills.each do |skill| %>,
+    				 Skill: <%=skill.name %>
+    				 <% end %>
+    <% user.proficiencies.each do |proficiency| %>
+    Years: <%=proficiency.year_experience%>
+    	Formal Training? <%=proficiency.formal_training%>
+    	<% end %>
+    <br>
    <% end %>
 </div>

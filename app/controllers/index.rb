@@ -38,7 +38,7 @@ end
 
 #----------- USERS -----------
 post'/skills/create' do
-
+  Skill.create(params[:post])
   redirect '/'
 end
 
