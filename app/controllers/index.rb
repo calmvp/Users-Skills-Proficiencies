@@ -20,7 +20,7 @@ post '/sessions' do
   if user
     # successfully authenticated; set up session and redirect
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/users/profile'
   else
     # an error occurred, re-render the sign-in form, displaying an error
     @error = "Invalid email or password."
@@ -37,6 +37,10 @@ end
 
 
 #----------- USERS -----------
+post'/skills/create' do
+
+  redirect '/'
+end
 
 get '/users/new' do
   # render sign-up page
@@ -55,4 +59,8 @@ post '/users' do
     # an error occurred, re-render the sign-up form, displaying errors
     erb :sign_up
   end
+end
+
+get '/users/profile' do
+  erb :profile
 end

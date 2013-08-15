@@ -1,0 +1,18 @@
+<h1>Welcome, <%= current_user.name %></h1>
+
+<h2>Add Skill and Proficiency</h2>
+
+<form action="/skills/create" method="post">
+	<input type = "hidden" name="user_id" value= <%= current_user.id %>>
+	<input type="text" name="name" placeholder="skill">
+	<br>
+	<input type="text" name="year_experience" placeholder="years experience">
+	<br>
+	<select name="formal">
+		Formal Training?
+		<option value="true">Yes</option>
+		<option value="false">No</option>
+	</select>
+		<input type="submit" value="Submit"?>
+</form>
+
